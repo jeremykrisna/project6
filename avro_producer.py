@@ -13,7 +13,8 @@ def send_record():
 
     producer_config = {
         "bootstrap.servers": "localhost:9092",
-        "schema.registry.url": "http://localhost:8081"
+        "schema.registry.url": "http://localhost:8081",
+        "acks": "1"
     }
 
     producer = AvroProducer(producer_config,default_key_schema=key_schema,default_value_schema=value_schema)
